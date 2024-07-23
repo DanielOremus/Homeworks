@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div>
+      Task 7. Умова. З клавіатури вводяться вартість товару та кількість одиниць
+      3 товарів. Обчислити вартість кожного товару окремо та загальну вартість.
+      Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+      <br />
+    </div>
+    <div class="container">
+      <div class="product">
+        <label
+          >Вартість товару:
+          <input type="text" />
+        </label>
+        <br />
+        <label
+          >Кількість товару:
+          <input type="text" />
+        </label>
+      </div>
+      <div class="product">
+        <label
+          >Вартість товару:
+          <input type="text" />
+        </label>
+        <br />
+        <label
+          >Кількість товару:
+          <input type="text" />
+        </label>
+      </div>
+      <div class="product">
+        <label
+          >Вартість товару:
+          <input type="text" />
+        </label>
+        <br />
+        <label
+          >Кількість товару:
+          <input type="text" />
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <button onclick="showTable()">Вивести чек</button>
+    </div>
+    <div id="tableContainer"></div>
+  </body>
+</html>
