@@ -1,8 +1,7 @@
 .btn-primary {
   background-color: #515151;
   border-color: #515151;
-  transition: all 0.5s;
-  transition: transform 0.75s;
+  transition: all 0.5s, transform 0.75s;
 }
 
 .btn-primary:hover {
