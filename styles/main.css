@@ -1,0 +1,23 @@
+body {
+  margin: 2.5rem;
+  background-color: #333;
+  color: #f6fce0;
+}
+.container {
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+li {
+  font-size: 1.2rem;
+  text-decoration: bold;
+}
+a {
+  text-decoration: none;
+  color: #f5df50;
+  transition: color 0.5s;
+}
+a:hover {
+  color: #8f822f;
+}
