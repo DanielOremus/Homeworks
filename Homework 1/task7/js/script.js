@@ -65,10 +65,9 @@ function showTable() {
   totalSumRow.append(totalSumTd1, totalSumTd2)
   table.appendChild(totalSumRow)
 
-  document.getElementById("tableContainer").appendChild(table)
+  document.getElementById("table-container").appendChild(table)
 }
 
 function removeTable() {
-  if (!document.querySelector("table")) return
-  document.querySelector("table").remove()
+  document.getElementById("table-container").innerText = ""
 }

@@ -2,7 +2,8 @@ function getMeters(centimeters) {
   return centimeters / 100
 }
 function getKilometers(centimeters) {
-  return getMeters(centimeters) / 1000
+  const result = getMeters(centimeters) / 1000
+  return result < Math.pow(10, -4) ? "дуже мале число" : result.toFixed(4)
 }
 
 function showResult() {

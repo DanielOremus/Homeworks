@@ -1,8 +1,18 @@
+function getSum(a, b) {
+  return a + b
+}
+function getProduct(a, b) {
+  return a * b
+}
+function getFraction(a, b) {
+  return (a / b).toFixed(2)
+}
+
 function showTable() {
   removeTable()
-
-  const a = parseFloat(document.querySelectorAll("input")[0].value)
-  const b = parseFloat(document.querySelectorAll("input")[1].value)
+  const inputList = document.querySelectorAll("input")
+  const a = parseFloat(inputList[0].value)
+  const b = parseFloat(inputList[1].value)
 
   const operationArr = ["Сума", "Добуток", "Частка"]
   const table = document.createElement("table")
@@ -16,24 +26,24 @@ function showTable() {
 
     switch (i) {
       case 0:
-        td2.innerText = a + b
+        td2.innerText = getSum(a, b)
         break
       case 1:
-        td2.innerText = a * b
+        td2.innerText = getProduct(a, b)
         break
       case 2:
-        b === 0 ? (td2.innerText = "Error") : (td2.innerText = a / b)
+        b === 0
+          ? (td2.innerText = "Error")
+          : (td2.innerText = getFraction(a, b))
         break
     }
     tr.append(td1, td2)
     table.appendChild(tr)
     table.setAttribute("border", "2px")
   }
-  document.getElementById("table").appendChild(table)
+  document.getElementById("table-container").appendChild(table)
 }
 
 function removeTable() {
-  if (document.querySelector("table")) {
-    document.querySelector("table").remove()
-  }
+  document.getElementById("table-container").innerText = ""
 }
