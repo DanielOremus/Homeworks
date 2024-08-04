@@ -1,4 +1,3 @@
-const asciiTitle = "TASK 13"
 let bulletsNumber
 let shipPos
 const inputs = document.querySelectorAll("input")
@@ -70,9 +69,6 @@ function onShoot() {
 
 function clearInputs(array) {
   array.forEach((el) => (el.value = ""))
-}
-function fontLoaded() {
-  document.getElementById("task").innerText = render4HTML(asciiTitle)
 }
 
 function changeElementsStatus(array) {

@@ -1,4 +1,3 @@
-const asciiTitle = "TASK 8"
 let attemptsNumber = 3
 let checkedNumbers = []
 
@@ -47,10 +46,6 @@ function display(min, max) {
     alert("У мене закінчились спроби, ви виграли!")
   }
   resetData()
-}
-
-function fontLoaded() {
-  document.getElementById("task").innerText = render4HTML(asciiTitle)
 }
 
 function resetData() {
