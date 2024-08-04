@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../styles/main.css" />
+
+    <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <div class="condition">
+      Task 8. Користувач загадує число. За 3 спроби комп’ютер намагається
+      вгадати число користувача (використати confirm).
+    </div>
+
+    <div class="form-group container row-gap-5">
+      <div class="row row-cols-1">
+        <div class="col">
+          <label class="col-sm-3 col-form-label"
+            >Мінімальне число:
+            <input type="text" class="form-control" />
+          </label>
+        </div>
+
+        <div class="col">
+          <label class="col-sm-3 col-form-label"
+            >Максимальне число:
+            <input type="text" class="form-control" />
+          </label>
+        </div>
+
+        <div class="col">
+          <button class="btn btn-lg btn-primary" onclick="onStart()">
+            New Game
+          </button>
+          <a href="../index.html">
+            <button class="btn btn-lg btn-primary">Return to HW5 Page</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

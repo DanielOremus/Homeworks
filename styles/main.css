@@ -23,7 +23,11 @@ a:hover {
 }
 .form-control:focus {
   border-color: #f5df50;
-  box-shadow: 0 0 4px 1px #f5df50;
+  box-shadow: 0 0 4px 1.5px #f5df50;
+}
+.form-control:disabled {
+  background-color: #6b6b6b;
+  border-color: #6b6b6b;
 }
 
 .btn-primary {
@@ -32,12 +36,21 @@ a:hover {
   transition: all 0.5s, transform 0.75s;
   margin: 15px auto;
 }
-
+.btn-primary:disabled {
+  background-color: #484848;
+  border-color: #484848;
+  color: rgb(223, 223, 223);
+}
 .btn-primary:hover {
   background-color: #434343;
   border-color: #434343;
   color: rgb(248, 247, 214);
   transform: scale(0.95);
+}
+.btn-primary:not(:disabled):not(:disabled):focus {
+  box-shadow: none;
+  background-color: #515151;
+  border-color: #515151;
 }
 
 .btn-primary:not(:disabled):not(:disabled):active {
