@@ -1,0 +1,24 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "title": "lemon",
+      "src": "./img/lemon.png"
+    },
+    {
+      "id": 2,
+      "title": "orange",
+      "src": "./img/orange.png"
+    },
+    {
+      "id": 3,
+      "title": "cherry",
+      "src": "./img/cherry.png"
+    },
+    {
+      "id": 4,
+      "title": "jackpot",
+      "src": "./img/jackpot.png"
+    }
+  ]
+}

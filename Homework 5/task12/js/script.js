@@ -1,38 +1,38 @@
-const images = [
-  {
-    id: 1,
-    title: "lemon",
-    src: "./img/lemon.png",
-  },
-  {
-    id: 2,
-    title: "orange",
-    src: "./img/orange.png",
-  },
-  {
-    id: 3,
-    title: "cherry",
-    src: "./img/cherry.png",
-  },
-  {
-    id: 4,
-    title: "jackpot",
-    src: "./img/jackpot.png",
-  },
-]
+function getImagesDb() {
+  return (imagesDb = fetch("./db.json")
+    .then((response) => response.json())
+    .then((data) => {
+      return data.images
+    }))
+}
 
+function getSlots() {
+  return document.querySelectorAll("img")
+}
+function getCurrentSlotsID(array) {
+  return array.map((el) => el.id)
+}
 function onSpin() {
-  const slots = document.querySelectorAll("img")
-  let idOfCurrentSlots = []
-  for (let i = 0; i < 3; i++) {
-    const index = Math.floor(Math.random() * images.length)
-    idOfCurrentSlots.push(images[index].id)
-    const imgObj = images[index]
-    slots[i].setAttribute("src", imgObj.src)
+  const imagesDb = getImagesDb()
+
+  const continueFunc = () => {
+    imagesDb.then((images) => {
+      const slots = getSlots()
+      let currentSlotsArr = []
+      for (let i = 0; i < 3; i++) {
+        const index = Math.floor(Math.random() * images.length)
+        currentSlotsArr.push(images[index])
+        const imgObj = images[index]
+        showImg(slots[i], imgObj)
+      }
+      const idOfCurrentSlots = getCurrentSlotsID(currentSlotsArr)
+
+      setTimeout(() => {
+        showResult(idOfCurrentSlots)
+      }, 500)
+    })
   }
-  setTimeout(() => {
-    showResult(idOfCurrentSlots)
-  }, 500)
+  continueFunc()
 }
 
 function showResult(idArray) {
@@ -55,4 +55,8 @@ function showResult(idArray) {
         break
     }
   } else alert("Ех, не щастить вам сьогодні. Спробуйте ще раз!")
+}
+
+function showImg(slot, imgObj) {
+  slot.setAttribute("src", imgObj.src)
 }

@@ -1,9 +1,10 @@
 const min = 1
 const max = 1000
+const numbersCount = 100
 
-function generateNumbers(min, max) {
+function generateNumbers(min, max, count) {
   let arr = []
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < count; i++) {
     const number = min + Math.floor(Math.random() * (max - min + 1))
     arr.push(number)
   }
@@ -22,7 +23,7 @@ window.onload = display
 function display() {
   const container = document.getElementsByClassName("col")[1]
   container.innerText = ""
-  const generatedNumbersArr = generateNumbers(min, max)
+  const generatedNumbersArr = generateNumbers(min, max, numbersCount)
   console.log(generatedNumbersArr)
   const evenNumbers = getEvenNumbersCount(generatedNumbersArr)
   const oddNumbers = generatedNumbersArr.length - evenNumbers
