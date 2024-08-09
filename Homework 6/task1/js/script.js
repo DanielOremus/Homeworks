@@ -154,7 +154,7 @@ function getResultMessage(result) {
       message = "Вітаю, ви влучили. Можете почати нову гру"
       break
     case "missed":
-      message = "Мимо. Маєте багато грошей, тому снаряди нескінчені"
+      message = "Мимо. Маєте багато грошей, тому снаряди нескінченні"
       break
     default:
       message = "Введіть коректні координати"
