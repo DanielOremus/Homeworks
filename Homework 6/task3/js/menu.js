@@ -26,7 +26,15 @@ class Menu {
     },
   ]
   liArr = [
-    { text: "Додати 2", action: this.add.bind(this, 2) },
+    {
+      text: "Додати 2",
+      action: () => {
+        this.add(2)
+        if (this.isEqual()) {
+          this.displayMessage(this.getResultMessage("complete")) //Не знав куди це підкрутити
+        }
+      },
+    },
     { text: "Додати 3", action: this.add.bind(this, 3) },
     { text: "Відняти 2", action: this.subtract.bind(this, 2) },
     { text: "Відняти 3", action: this.subtract.bind(this, 3) },

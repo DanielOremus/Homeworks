@@ -125,28 +125,6 @@ function generateAxis(maxX, maxY, rowClasses, colClasses, type) {
   return row
 }
 
-function getShootedCell(coordinatesArr) {
-  let row = document.querySelectorAll(".tr")
-  row = row[row.length - coordinatesArr[1]]
-  const col = row.querySelectorAll(".td")[coordinatesArr[0] - 1]
-  return col
-}
-function changeCellColor(cellElement, color) {
-  cellElement.classList.remove("bg-white")
-  cellElement.classList.add(`bg-${color}`)
-}
-function getResultColor(result) {
-  let color
-  switch (result) {
-    case "hit":
-      color = "success"
-      break
-    case "missed":
-      color = "info"
-      break
-  }
-  return color
-}
 function getResultMessage(result) {
   let message
   switch (result) {
