@@ -3,10 +3,7 @@ class Battlefield {
   height = 5
 
   constructor(selector) {
-    console.log(selector)
-
     this.container = document.querySelector(selector)
-    this.render()
     this.shipPos = this.generateShipPos(this.width, this.height)
   }
   generateShipPos() {
@@ -59,25 +56,47 @@ class Battlefield {
   generateCoordinateArea() {
     const areaDiv = document.createElement("div")
     areaDiv.setAttribute("class", "coordinate-area")
-    for (let i = 0; i < this.width; i++) {
-      const divRow = this.generateRowSection(
-        "tr row g-0 flex-nowrap",
-        "td col bg-white border border-black"
-      )
 
-      areaDiv.appendChild(divRow)
+    for (let i = this.height; i >= 1; i--) {
+      const row = this.generateEmptyRow("tr row g-0 flex-nowrap")
+      for (let j = 1; j <= this.width; j++) {
+        const col = this.generateCol("td col bg-white border border-black")
+        const e = new CustomEvent("cell-picked", {
+          detail: {
+            coordinates: {
+              x: j,
+              y: i,
+            },
+          },
+          bubbles: true,
+        })
+
+        col.onclick = () => col.dispatchEvent(e)
+
+        row.appendChild(col)
+      }
+
+      areaDiv.appendChild(row)
     }
+    // areaDiv.onclick =
     return areaDiv
   }
-  getShootedCell(coordinatesArr) {
+  getShootedCell(coordinates) {
     let row = document.querySelectorAll(".tr")
-    row = row[row.length - coordinatesArr[1]]
-    const col = row.querySelectorAll(".td")[coordinatesArr[0] - 1]
+    console.log(row)
+    console.log(coordinates)
+
+    row = row[row.length - coordinates.y]
+    console.log(coordinates)
+    console.log(row)
+
+    const col = row.querySelectorAll(".td")[coordinates.x - 1]
     return col
   }
-  changeCellColor(cellElement, color) {
-    cellElement.classList.remove("bg-white")
-    cellElement.classList.add(`bg-${color}`)
+  changeCellColor(coordinates, result) {
+    const cell = this.getShootedCell(coordinates)
+    cell.classList.remove("bg-white")
+    cell.classList.add(`bg-${this.getResultColor(result)}`)
   }
   getResultColor(result) {
     let color
@@ -91,19 +110,14 @@ class Battlefield {
     }
     return color
   }
-  generateRowSection(rowClasses, colClasses) {
-    const row = this.generateEmptyRow(rowClasses)
-    for (let j = 1; j <= this.width; j++) {
-      const col = this.generateCol(colClasses)
-      row.appendChild(col)
-    }
-    return row
-  }
   generateCol(classes, text) {
     const col = document.createElement("div")
     col.setAttribute("class", classes)
     col.innerText = text || ""
     return col
+  }
+  clearBattlefield() {
+    this.container.innerText = ""
   }
   generateEmptyRow(classes) {
     const row = document.createElement("div")

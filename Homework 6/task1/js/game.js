@@ -6,95 +6,65 @@ class Game {
       classes: "btn btn-lg btn-primary",
       action: () => this.onStart(),
     },
-    {
-      title: "Shoot",
-      classes: "btn btn-lg btn-primary",
-      action: () => this.validateUserPos(),
-    },
+
     {
       title: "Go to HW6 Page",
       classes: "btn btn-lg btn-primary",
       action: () => (window.location.href = "../index.html"),
     },
   ]
-  battleFieldContainer = "graphic-container"
+  battlefieldSelector = "graphic-container"
+
   constructor(selector) {
     this.container = document.querySelector(selector)
     console.log(this.container)
-
     this.render()
+    this.battlefield = new Battlefield(`.${this.battlefieldSelector}`)
+    console.log(this.battlefield)
+
+    this.battlefield.container.addEventListener("cell-picked", (e) => {
+      this.onShoot(e.detail.coordinates)
+    })
   }
   render() {
-    const inputSection = this.generateInputSection()
     const buttonSection = this.generateButtonSection()
     const wrapper = this.generateEmptyRow("row")
     const colWrapper = this.generateCol("col")
     const battleFieldContainer = this.generateCol(
-      `${this.battleFieldContainer} col d-flex`
+      `${this.battlefieldSelector} col d-flex`
     )
-    colWrapper.append(inputSection, buttonSection)
+    colWrapper.append(buttonSection)
     wrapper.append(colWrapper, battleFieldContainer)
     this.container.appendChild(wrapper)
   }
-  validateUserPos() {
-    const values = [...document.querySelectorAll("input")].map((el) =>
-      parseInt(el.value)
-    )
-    values.some((el) => isNaN(el) || el <= 0)
-      ? this.displayResult(this.getResultMessage())
-      : this.onShoot(values)
+
+  onStart() {
+    this.battlefield.clearBattlefield()
+    this.battlefield = new Battlefield(`.${this.battlefieldSelector}`)
+
+    this.battlefield.render()
   }
-  onShoot(userValues) {
+
+  onShoot(userCoordinates) {
     let result
-    if (this.shipPos.x === userValues[0] && this.shipPos.y === userValues[1]) {
+    if (
+      this.battlefield.shipPos.x === userCoordinates.x &&
+      this.battlefield.shipPos.y === userCoordinates.y
+    ) {
       result = "hit"
+      setTimeout(() => {
+        this.onStart()
+      }, 500)
     } else result = "missed"
     const message = this.getResultMessage(result)
-    const color = this.getResultColor(result)
-    const cellToChange = getShootedCell(userValues)
-    changeCellColor(cellToChange, color)
+    console.log(userCoordinates)
+
+    this.battlefield.changeCellColor(userCoordinates, result)
     setTimeout(() => {
-      displayResult(message)
+      this.displayResult(message)
     }, 100)
   }
-  getShootedCell(userValues) {
-    let row = document.querySelectorAll(".tr")
-    row = row[row.length - userValues[1]]
-    const col = row.querySelectorAll(".td")[userValues[0] - 1]
-    return col
-  }
-  changeCellColor(cellElement, color) {
-    cellElement.classList.remove("bg-white")
-    cellElement.classList.add(`bg-${color}`)
-  }
-  getResultColor(result) {
-    let color
-    switch (result) {
-      case "hit":
-        color = "success"
-        break
-      case "missed":
-        color = "info"
-        break
-    }
-    return color
-  }
-  onStart() {
-    console.log(this.battleFieldContainer)
 
-    new Battlefield(`.${this.battleFieldContainer}`)
-  }
-  generateInputSection() {
-    const section = this.generateEmptyRow("col-8")
-    for (let i = 0; i < this.labelTextArr.length; i++) {
-      const label = document.createElement("label")
-      label.innerText = this.labelTextArr[i]
-      const input = document.createElement("input")
-      input.setAttribute("class", "form-control")
-      section.append(label, input)
-    }
-    return section
-  }
   generateCol(classes) {
     const col = document.createElement("div")
     col.setAttribute("class", classes)
