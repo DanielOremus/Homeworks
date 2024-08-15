@@ -1,0 +1,14 @@
+.area-cell {
+  width: 120px;
+  height: 120px;
+
+  max-width: 120px;
+  min-width: 120px;
+}
+
+.axis-cell {
+  height: 25px;
+  width: 120px;
+  max-width: 120px;
+  min-width: 120px;
+}
