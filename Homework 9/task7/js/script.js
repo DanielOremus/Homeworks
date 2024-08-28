@@ -3,12 +3,12 @@ function generateArray(length = 10) {
 }
 function onBtnClick() {
   const array = generateArray()
-  const resArr = array.map((el) => (el > 1000 ? (el * 0.7).toFixed(1) : el))
+  const resArr = array.map((el) => (el > 1000 ? el * 0.7 : el))
   displayResult(`Масив: ${array}\nНовий масив: ${resArr.join(" | ")}`)
   // ============================Зміна масиву без створення нового
   // array.forEach((el, i, arr) => {
   //   if (el > 1000) {
-  //     arr[i] = (el * 0.7).toFixed(1)
+  //     arr[i] = (el * 0.7)
   //   }
   // })
   // displayResult(`Новий масив: ${array.join(" | ")}`)

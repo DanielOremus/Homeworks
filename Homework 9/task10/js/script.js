@@ -13,7 +13,7 @@ function displayResult(result) {
   alert(result)
 }
 function generateTaxArray(array, tax = 0.2) {
-  return array.map((el) => (el * tax).toFixed(1))
+  return array.map((el) => el * tax)
 }
 function generateRandomNumber(min = 500, max = 1000) {
   return min + Math.floor(Math.random() * (max - min + 1))
