@@ -103,7 +103,7 @@ function onBtnClick() {
     displayResult("Помилка, введіть коректну кількість елементів")
   else {
     const MIN = 1
-    const MAX = 5
+    const MAX = 10000
     const array = generateArray(userNumber, MIN, MAX)
     const funcArray = [
       getMoreThan1000Array,
