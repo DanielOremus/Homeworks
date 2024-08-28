@@ -1,10 +1,10 @@
 //Всі функції описані окремо (не перевикористовуємо функції, які можуть допомогти в інших обчисленнях (спеціально для практики))
 
 //Генерація масиву
-function generateArray(length, min, max) {
+function generateArray(length, min = 1, max = 10000) {
   return new Array(length).fill(0).map(() => generateRandomNumber(min, max))
 }
-function generateRandomNumber(min = 1, max = 10000) {
+function generateRandomNumber(min, max) {
   return min + Math.floor(Math.random() * (max - min + 1))
 }
 
