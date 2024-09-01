@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="../../styles/main.css" />
+  </head>
+  <body>
+    <div class="condition">
+      Task 1. Знайти суми елементів у вказаній області (зафарбована область
+      охоплює відповідну половину рядків і стовпців)
+      <ol>
+        <li>Номери рядків від 0 до половини, стовпці від 0 до половини</li>
+        <li>Номери рядків від 0 до половини, стовпці від половини до кінця</li>
+        <li>Номери рядків від половини до кінця, стовпці від 0 до половини</li>
+        <li>
+          Номери рядків від половини до кінця , стовпці від половини до кінця
+        </li>
+        <li>Суму парних рядків (в log рядки рахуємо від 1, як в житті)</li>
+        <li>
+          Суму непарних стовпців (в log стовбці рахуємо від 1, як в житті)
+        </li>
+        <li>У парних рядках – непарні стовпці,</li>
+        <li>У непарних – парні.</li>
+      </ol>
+    </div>
+    <div class="container mt-4">
+      <div class="row flex-column gy-3">
+        <div class="col-4">
+          <label> Мінімальна кількість рядків : </label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="col-4">
+          <label> Максимальна кількість рядків: </label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="col-4">
+          <label> Кількість стовбців: </label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="col-4">
+          <label> Мінімальне значення (число) елемента: </label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="col-4">
+          <label> Максимальне значення (число) елемента : </label>
+          <input type="text" class="form-control" />
+        </div>
+
+        <div class="col-4 d-flex justify-content-around">
+          <button class="btn btn-lg btn-primary" onclick="onBtnClick()">
+            Get Result
+          </button>
+          <a href="../index.html">
+            <button class="btn btn-lg btn-primary">Go to HW11 Page</button>
+          </a>
+        </div>
+        <div class="result-container"></div>
+      </div>
+    </div>
+  </body>
+</html>
