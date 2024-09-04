@@ -43,7 +43,7 @@ a:hover {
 }
 
 .btn-primary {
-  transition: all 0.5s, transform 0.75s;
+  transition: all 0.5s;
 
   --bs-btn-bg: var(--bs-primary);
   --bs-btn-border-color: var(--bs-primary);
@@ -59,7 +59,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-  transform: scale(0.95);
+  transform: translateY(-3px);
 }
 
 .condition {
