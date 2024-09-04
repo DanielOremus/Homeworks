@@ -4,7 +4,17 @@ function onMounted() {
   const array = generateArray()
   console.log(array)
 
-  console.log(bubbleSort([...array]))
+  console.log("--Bubble Sort--")
+  console.log(`Результат: ${bubbleSort([...array])}`)
+
+  console.log("--Insertion Sort--")
+  console.log(`Результат: ${insertionSort([...array])}`)
+
+  console.log("--Cocktail Sort--")
+  console.log(`Результат: ${cocktailSort([...array])}`)
+
+  console.log("--Selection Sort--")
+  console.log(`Результат: ${selectionSort([...array])}`)
 }
 function insertionSort(array) {
   let checkCount = 0
@@ -97,7 +107,7 @@ function selectionSort(array) {
       const temp = array[i]
       array[i] = array[minIndex]
       array[minIndex] = temp
-      console.log(`Етап ${i + 1}: ${JSON.stringify(array)}`)
+      console.log(`Етап: ${JSON.stringify(array)}`)
     }
   }
   return array
