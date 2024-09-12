@@ -29,7 +29,7 @@ a:hover {
 }
 .form-control:focus {
   border-color: #f5df50;
-  box-shadow: 0 0 4px 1.5px #f5df50;
+  box-shadow: 0 0 8px 1.5px #f5df50;
   background-color: white;
   color: var(--input-color);
 }
@@ -64,5 +64,4 @@ a:hover {
 
 .condition {
   font-size: 1.3rem;
-  max-width: 60%;
 }

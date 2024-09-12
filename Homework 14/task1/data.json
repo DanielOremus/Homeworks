@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Apple",
+    "owner": "Tim Cook",
+    "sponsors": [
+      { "lastName": "Johnson", "firstName": "John", "depositAmount": 50000 },
+      { "lastName": "Smith", "firstName": "Anna", "depositAmount": 25000 },
+      { "lastName": "Williams", "firstName": "Kate", "depositAmount": 40000 }
+    ],
+    "yearOfCreation": 1976,
+    "price": 5000
+  },
+  {
+    "name": "Microsoft",
+    "owner": "Satya Nadella",
+    "sponsors": [
+      { "lastName": "Brown", "firstName": "Michael", "depositAmount": 30000 },
+      { "lastName": "Davis", "firstName": "David", "depositAmount": 15000 },
+      { "lastName": "Miller", "firstName": "Sara", "depositAmount": 35000 }
+    ],
+    "yearOfCreation": 1975,
+    "price": 8000
+  },
+  {
+    "name": "Amazon",
+    "owner": "Andy Jassy",
+    "sponsors": [
+      { "lastName": "Taylor", "firstName": "Emily", "depositAmount": 60000 },
+      { "lastName": "Anderson", "firstName": "James", "depositAmount": 30000 },
+      { "lastName": "Thomas", "firstName": "Tom", "depositAmount": 20000 }
+    ],
+    "yearOfCreation": 1994,
+    "price": 25000
+  },
+  {
+    "name": "Google",
+    "owner": "Sundar Pichai",
+    "sponsors": [
+      { "lastName": "Martinez", "firstName": "Maria", "depositAmount": 45000 },
+      { "lastName": "Hernandez", "firstName": "Jose", "depositAmount": 35000 },
+      { "lastName": "Lopez", "firstName": "Carlos", "depositAmount": 40000 }
+    ],
+    "yearOfCreation": 1998,
+    "price": 300000
+  },
+  {
+    "name": "Facebook",
+    "owner": "Mark Zuckerberg",
+    "sponsors": [
+      {
+        "lastName": "Gonzalez",
+        "firstName": "Alejandro",
+        "depositAmount": 25000
+      },
+      { "lastName": "Wilson", "firstName": "Alex", "depositAmount": 15000 },
+      { "lastName": "Lee", "firstName": "Daniel", "depositAmount": 30000 }
+    ],
+    "yearOfCreation": 2004,
+    "price": 150000
+  }
+]
