@@ -65,3 +65,13 @@ a:hover {
 .condition {
   font-size: 1.3rem;
 }
+.table {
+  tr td {
+    color: var(--bs-body-color);
+    padding: 12px;
+  }
+}
+.list-group.borderless li {
+  border: 0;
+  padding: 1px;
+}
