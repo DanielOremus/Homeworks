@@ -69,6 +69,23 @@ function generateGreaterThan200Array(array) {
 
   return resultArray
 }
+
+function insertionSort(maxIncomeArray, mainArray) {
+  for (let i = 0; i < maxIncomeArray.length; i++) {
+    const key = maxIncomeArray[i]
+    const rowKey = mainArray[i]
+    let j = i - 1
+    while (j >= 0 && maxIncomeArray[j] < key) {
+      maxIncomeArray[j + 1] = maxIncomeArray[j]
+      mainArray[j + 1] = mainArray[j]
+      j--
+    }
+    maxIncomeArray[j + 1] = key
+    mainArray[j + 1] = rowKey
+  }
+  return { maxIncomeArray, sortedMainArray: mainArray }
+}
+
 function collectResults(mainArray) {
   const incomesPerEveryWeek = generateIncomePerWeekArray(mainArray)
 
@@ -85,6 +102,33 @@ function collectResults(mainArray) {
   const sortedWeeksByDescendingOfMaxElement = [...mainArray].sort(
     (a, b) => Math.max(...b) - Math.max(...a)
   )
+  //--------------Інші варіанти-------------------
+  const maxIncomeForWeekArray = mainArray.map((el) => Math.max(...el))
+  // const sortedWeeksByDescendingOfMaxElement = insertionSort(
+  //   [...maxIncomeForWeekArray],
+  //   [...mainArray]
+  // ).sortedMainArray
+
+  //Todo: Refactor this piece
+  const combinedArray = maxIncomeForWeekArray
+    .map((el, i) => ({
+      value: el,
+      index: i,
+    }))
+    .sort((a, b) => b.value - a.value)
+
+  for (const obj of combinedArray) {
+    mainArray.push(mainArray[obj.index])
+  }
+  mainArray.splice(0, combinedArray.length)
+  console.log([...mainArray])
+
+  // const sortedWeeksByDescendingOfMaxElement = combinedArray.map(
+  //   (el) => mainArray[el.index]
+  // )
+  //-----------------------------------------------
+  // console.log(sortedWeeksByDescendingOfMaxElement)
+
   // const sortedWeeksByDescendingSum = [...mainArray].sort((a, b) => {
   //   const incomeForAWeek = a.reduce((accumulator, el) => accumulator + el)
   //   const incomeForBWeek = b.reduce((accumulator, el) => accumulator + el)
@@ -111,7 +155,7 @@ function onBtnClick() {
     displayResult("Помилка, введіть коректні значення")
   else {
     const array = generateArray(inputValues)
-    console.log(array)
+    console.log([...array])
     const results = collectResults(array)
 
     displayResult(getResultText(results))

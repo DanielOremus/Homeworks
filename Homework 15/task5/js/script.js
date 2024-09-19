@@ -1,9 +1,5 @@
 async function getData() {
-  const { boys, girls } = await fetch("./data.json").then((data) => data.json())
-  return {
-    boys,
-    girls,
-  }
+  return await fetch("./data.json").then((data) => data.json())
 }
 
 window.onload = async () => {
