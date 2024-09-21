@@ -28,13 +28,22 @@ a:hover {
   color: #8f822f;
 }
 .form-control:focus {
-  border-color: #f5df50;
-  box-shadow: 0 0 8px 1.5px #f5df50;
-  background-color: white;
+  border-color: #e3cf4a;
+  box-shadow: 0 0 0px 0.2em rgba(237, 210, 35, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
+
   color: var(--input-color);
 }
+.form-select:focus {
+  box-shadow: 0 0 2px 0.25em rgba(237, 210, 35, 0.85);
+  border-color: #f5df50;
+}
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23f3f3eb' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  color: #f8f5ca;
+}
 .form-control {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
   color: var(--input-color);
 }
 .form-control:disabled {
