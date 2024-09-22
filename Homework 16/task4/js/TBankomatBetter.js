@@ -36,10 +36,11 @@ class TBankomat {
   }
   getMinSum() {
     if (this.banknotes.every((el) => el.quantity === 0)) return 0
-    return this.banknotes.reduce((accumulator, el) => {
-      if (el.value < accumulator && el.quantity !== 0) return el.value
-      return accumulator
-    }, +Infinity)
+    return this.banknotes.reduce(
+      (accumulator, el) =>
+        el.value < accumulator && el.quantity !== 0 ? el.value : accumulator,
+      +Infinity
+    )
   }
   //Перевірка на можливість зняття без змін балансу в банкоматі
   canWithdraw(sumToWithdraw) {
