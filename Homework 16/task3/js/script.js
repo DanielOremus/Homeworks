@@ -27,6 +27,7 @@ window.onload = () => {
       const keys = Object.keys(filterObj)
       return this.favours.filter((el) =>
         keys.every((key) => {
+          //TODO: Refactor with RegEx
           const elKey = el.hasOwnProperty(key)
             ? key
             : key[0].toUpperCase() + key.slice(1)
