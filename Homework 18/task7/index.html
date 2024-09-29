@@ -23,98 +23,301 @@
     </div>
 
     <div class="container gap-3 mt-4">
-      <div class="row gy-2">
-        <div class="col-4">
-          <select class="form-select">
-            <option value="400">Авто - 400грн</option>
-            <option value="500">Автобус - 500грн</option>
-            <option value="700">Літак - 700грн</option>
-          </select>
-        </div>
-      </div>
-      <div class="row flex-column">
-        <div class="col-4">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value="40"
-              id="breakfastCheckbox"
-            />
-            <label class="form-check-label" for="breakfastCheckbox">
-              Сніданок - 40грн
-            </label>
+      <div class="row">
+        <div class="col">
+          <div class="row gy-2">
+            <div class="col">
+              <p class="fs-5">1 ЕТАП</p>
+              <select class="form-select">
+                <option value="400">Авто - 400грн</option>
+                <option value="500">Автобус - 500грн</option>
+                <option value="700">Літак - 700грн</option>
+              </select>
+            </div>
+          </div>
+          <div class="row flex-column">
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="40"
+                  id="firstBreakfastCheckbox"
+                />
+                <label class="form-check-label" for="firstBreakfastCheckbox">
+                  Сніданок - 40грн
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="60"
+                  id="firstlunchCheckbox"
+                />
+                <label class="form-check-label" for="firstlunchCheckbox">
+                  Обід - 60грн
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="50"
+                  id="firstDinnerCheckbox"
+                />
+                <label class="form-check-label" for="firstDinnerCheckbox">
+                  Вечеря - 50грн
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row flex-column">
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="100"
+                  name="firstGuideRadio"
+                  id="first1Guide"
+                  checked
+                />
+                <label class="form-check-label" for="first1Guide">
+                  1 гід - 100грн</label
+                >
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="firstGuideRadio"
+                  value="200"
+                  id="first2Guide"
+                />
+                <label class="form-check-label" for="first2Guide">
+                  2 гід - 200грн</label
+                >
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  name="firstGuideRadio"
+                  type="radio"
+                  value="300"
+                  id="first3Guide"
+                />
+                <label class="form-check-label" for="first3Guide">
+                  3 гід - 300грн</label
+                >
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value="60"
-              id="lunchCheckbox"
-            />
-            <label class="form-check-label" for="lunchCheckbox">
-              Обід - 60грн
-            </label>
+        <div class="col">
+          <div class="row gy-2">
+            <div class="col">
+              <p class="fs-5">2 ЕТАП</p>
+
+              <select class="form-select">
+                <option value="400">Авто - 400грн</option>
+                <option value="500">Автобус - 500грн</option>
+                <option value="700">Літак - 700грн</option>
+              </select>
+            </div>
+          </div>
+          <div class="row flex-column">
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="40"
+                  id="secondBreakfastCheckbox"
+                />
+                <label class="form-check-label" for="secondBreakfastCheckbox">
+                  Сніданок - 40грн
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="60"
+                  id="secondLunchCheckbox"
+                />
+                <label class="form-check-label" for="secondLunchCheckbox">
+                  Обід - 60грн
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="50"
+                  id="secondDinnerCheckbox"
+                />
+                <label class="form-check-label" for="secondDinnerCheckbox">
+                  Вечеря - 50грн
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row flex-column">
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="100"
+                  name="secondGuideRadio"
+                  id="second1Guide"
+                  checked
+                />
+                <label class="form-check-label" for="second1Guide">
+                  1 гід - 100грн</label
+                >
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="secondGuideRadio"
+                  value="200"
+                  id="second2Guide"
+                />
+                <label class="form-check-label" for="second2Guide">
+                  2 гід - 200грн</label
+                >
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  name="secondGuideRadio"
+                  type="radio"
+                  value="300"
+                  id="second3Guide"
+                />
+                <label class="form-check-label" for="second3Guide">
+                  3 гід - 300грн</label
+                >
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value="50"
-              id="dinnerCheckbox"
-            />
-            <label class="form-check-label" for="dinnerCheckbox">
-              Вечеря - 50грн
-            </label>
+        <div class="col">
+          <div class="row gy-2">
+            <div class="col">
+              <p class="fs-5">3 ЕТАП</p>
+
+              <select class="form-select">
+                <option value="400">Авто - 400грн</option>
+                <option value="500">Автобус - 500грн</option>
+                <option value="700">Літак - 700грн</option>
+              </select>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="row flex-column">
-        <div class="col-4">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              value="100"
-              name="guideRadio"
-              id="firstGuide"
-              checked
-            />
-            <label class="form-check-label" for="firstGuide">
-              1 гід - 100грн</label
-            >
+          <div class="row flex-column">
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="40"
+                  id="thirdBreakfastCheckbox"
+                />
+                <label class="form-check-label" for="thirdBreakfastCheckbox">
+                  Сніданок - 40грн
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="60"
+                  id="thirdLunchCheckbox"
+                />
+                <label class="form-check-label" for="thirdLunchCheckbox">
+                  Обід - 60грн
+                </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="50"
+                  id="thirdDinnerCheckbox"
+                />
+                <label class="form-check-label" for="thirdDinnerCheckbox">
+                  Вечеря - 50грн
+                </label>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-4">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="guideRadio"
-              value="200"
-              id="secondGuide"
-            />
-            <label class="form-check-label" for="secondGuide">
-              2 гід - 200грн</label
-            >
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              name="guideRadio"
-              type="radio"
-              value="300"
-              id="thirdGuide"
-            />
-            <label class="form-check-label" for="thirdGuide">
-              3 гід - 300грн</label
-            >
+          <div class="row flex-column">
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  value="100"
+                  name="thirdGuideRadio"
+                  id="third1Guide"
+                  checked
+                />
+                <label class="form-check-label" for="third1Guide">
+                  1 гід - 100грн</label
+                >
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="thirdGuideRadio"
+                  value="200"
+                  id="third2Guide"
+                />
+                <label class="form-check-label" for="third2Guide">
+                  2 гід - 200грн</label
+                >
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  name="thirdGuideRadio"
+                  type="radio"
+                  value="300"
+                  id="third3Guide"
+                />
+                <label class="form-check-label" for="third3Guide">
+                  3 гід - 300грн</label
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>

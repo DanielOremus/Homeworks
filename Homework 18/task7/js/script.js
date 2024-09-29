@@ -1,12 +1,12 @@
 window.onload = () => {
   const checkBoxes = getCheckboxes()
   const radios = getRadios()
-  const select = getVehicleSelect()
+  const selects = getVehicleSelects()
   const resultContainer = document.querySelector(".result-container")
   const calculateButton = document.querySelector("button")
   calculateButton.onclick = onCalculate.bind(
     null,
-    select,
+    selects,
     checkBoxes,
     radios,
     resultContainer
@@ -17,23 +17,30 @@ function getCheckboxes() {
   return document.querySelectorAll("input[type='checkbox']")
 }
 
-function onCalculate(select, checkBoxes, radios, resultContainer) {
-  const vehiclePrice = parseInt(select.value)
-  const foodPrice = [...checkBoxes].reduce(
+function onCalculate(selects, checkBoxes, radios, resultContainer) {
+  const vehiclePrice = [...selects].reduce(
+    (accumulator, el) => accumulator + parseInt(el.value),
+    0
+  )
+  const foodPrice = getFormControlsSum(checkBoxes)
+
+  const guidePrice = getFormControlsSum(radios)
+  const totalSum = vehiclePrice + foodPrice + guidePrice
+  displayResult(resultContainer, totalSum)
+}
+function getFormControlsSum(controls) {
+  return [...controls].reduce(
     (accumulator, el) =>
       el.checked ? accumulator + parseInt(el.value) : accumulator,
     0
   )
-  const guidePrice = parseInt([...radios].find((el) => el.checked).value)
-  const totalSum = vehiclePrice + foodPrice + guidePrice
-  displayResult(resultContainer, totalSum)
 }
 
 function getRadios() {
   return document.querySelectorAll("input[type='radio']")
 }
-function getVehicleSelect() {
-  return document.querySelector("select")
+function getVehicleSelects() {
+  return document.querySelectorAll("select")
 }
 
 function displayResult(resultContainer, sum) {
