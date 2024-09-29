@@ -6,6 +6,7 @@
   --bs-primary-hover-bg: #434343; /* Hover background color */
   --bs-primary-hover-border: #434343;
   --input-color: black;
+  --bs-table-bg: white;
 }
 body {
   margin: 2.5rem;
@@ -47,8 +48,8 @@ a:hover {
   color: var(--input-color);
 }
 .form-control:disabled {
-  background-color: #6b6b6b;
-  border-color: #6b6b6b;
+  background-color: #959595;
+  border-color: #959595;
 }
 
 .btn-primary {
