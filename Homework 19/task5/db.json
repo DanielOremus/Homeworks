@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Ноутбук Acer Aspire 7",
+    "price": "30999",
+    "imgSrc": "./images/laptop1.jpg"
+  },
+  {
+    "title": "Ноутбук Asus Laptop",
+    "price": "19999",
+    "imgSrc": "./images/laptop2.jpg"
+  },
+  {
+    "title": "Ноутбук Lenovo IdeaPad",
+    "price": "13999",
+    "imgSrc": "./images/laptop3.jpg"
+  },
+  {
+    "title": "Ноутбук Apple MacBook",
+    "price": "39999",
+    "imgSrc": "./images/laptop4.jpg"
+  }
+]
