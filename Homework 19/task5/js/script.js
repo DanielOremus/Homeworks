@@ -36,7 +36,12 @@ function onCardClick(e) {
   const clickedEl = e.target
   const cardItem = clickedEl.closest(".card-item")
 
-  console.log(cardItem)
+  for (const card of cardItem.parentNode.children) {
+    if (card.classList.contains("selected")) {
+      card.classList.toggle("selected")
+      break
+    }
+  }
 
   cardItem?.classList.toggle("selected")
 }
