@@ -1,0 +1,129 @@
+/* Default styles */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+.prevPageBtn {
+  width: 50%;
+  margin-inline: auto;
+  color: var(--bs-body-color);
+  font-size: 20px;
+}
+/* Utility classes */
+.component {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  text-align: center;
+}
+/* -------- */
+
+.componentTitle {
+  font-size: 1.5rem;
+}
+
+.productList {
+  width: 60%;
+}
+.productList > .cardList {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
+.cartList > .cardList {
+  margin-top: 100px;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cartList .card {
+  padding-block: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(50, 50, 50);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  .cardTitle {
+    font-weight: 500;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 30%;
+  }
+  .cardPrice {
+    font-size: 19px;
+  }
+  .cardImg {
+    width: 100px;
+    max-height: 65px;
+  }
+  .cardQuantity {
+    font-size: 18px;
+  }
+  .btn {
+    width: 35px;
+    height: 35px;
+  }
+}
+.productList .card {
+  background-color: rgb(69, 69, 69);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.306);
+  padding-inline: 20px;
+  padding-block: 15px;
+  display: flex;
+  gap: 15px;
+  text-align: start;
+  height: 350px;
+  .cardTitle {
+    font-size: 20px;
+    font-weight: 500;
+    display: -webkit-box; /* Створює флекс-контейнер з поведінкою блоку */
+    -webkit-line-clamp: 2; /* Кількість рядків, після яких додаються три крапки */
+    -webkit-box-orient: vertical; /* Вертикальна орієнтація контейнера */
+    overflow: hidden;
+    width: 200px;
+  }
+  .cardImg {
+    width: 210px;
+  }
+  .cardPrice {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .addToCardBtn {
+    font-size: 20px;
+    color: var(--bs-body-color);
+  }
+}
+.btn-primary:hover {
+  background-color: rgb(91, 91, 91);
+  transform: none;
+}
+
+.cartList {
+  width: 40%;
+  background-color: rgb(61, 61, 61);
+  border: 2px solid rgb(61, 61, 61);
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+  position: relative;
+  .totalSum {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    font-size: 30px;
+  }
+}
