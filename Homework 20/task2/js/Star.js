@@ -1,19 +1,19 @@
 class Star {
   constructor(
     starImgSrc,
-    startWidthPx,
-    maxScale,
-    scaleStep,
+    initialWidthPx,
+    finalScale,
+    stepPercent,
     interval,
     containerSelector
   ) {
     this.imgSrc = starImgSrc
-    this.startWidthPx = startWidthPx
-    this.maxScale = maxScale
-    this.growingStep = scaleStep
+    this.initialWidth = initialWidthPx
+    this.finalScale = finalScale
+    this.growingStep = stepPercent / 100
     this.growingInterval = interval
     this.container = this.getContainer(containerSelector)
-    this.currentScale = 100
+    this.currentScale = 1
   }
   getContainer(containerSelector) {
     return document.querySelector(containerSelector)
@@ -23,46 +23,43 @@ class Star {
       const img = document.createElement("img")
       img.setAttribute("src", this.imgSrc)
       img.style.position = "fixed"
-      img.style.width = this.startWidthPx + "px"
+      img.style.width = this.initialWidth + "px"
       this.container.append(img)
       this.img = img
     }
     this.img.style.left =
-      this.getRandomPos(window.innerWidth, this.startWidthPx) + "%"
+      this.getRandomPos(window.innerWidth, this.initialWidth) + "px"
     this.img.style.top =
-      this.getRandomPos(window.innerHeight, this.startWidthPx) + "%"
+      this.getRandomPos(window.innerHeight, this.initialWidth) + "px"
   }
   start() {
     this.render()
     this.myIntervalId = setInterval(() => {
-      this.img.style.scale = this.currentScale + this.growingStep + "%"
-      this.currentScale += this.growingStep
-      if (this.currentScale > this.maxScale) {
+      if (this.currentScale >= this.finalScale) {
         this.reset()
         this.render()
+      } else {
+        this.currentScale += this.growingStep
+        this.updateImgScale()
       }
     }, this.growingInterval)
+  }
+  updateImgScale() {
+    this.img.style.scale = this.currentScale
   }
   stop() {
     clearInterval(this.myIntervalId)
   }
   reset() {
-    this.img.style.scale = "100%"
-    this.currentScale = 100
+    this.currentScale = 1
+    this.updateImgScale()
   }
-
   getRandomPos(windowInnerSize, initialImageSize) {
-    const maxImageSizePx = (initialImageSize * this.maxScale) / 100
+    const finalImageSize = initialImageSize * this.finalScale
+    const deltaSize = finalImageSize - initialImageSize
 
-    const deltaSize =
-      maxImageSizePx !== initialImageSize
-        ? (maxImageSizePx - initialImageSize) / 2
-        : 1
-
-    const min = (deltaSize / windowInnerSize) * 100
-
-    const stepsToProceed = maxImageSizePx / deltaSize
-    const max = 100 - (stepsToProceed - 1) * min
+    const min = deltaSize / 2
+    const max = windowInnerSize - this.finalScale * 0.75 * initialImageSize
 
     return min + Math.floor(Math.random() * (max - min + 1))
   }
