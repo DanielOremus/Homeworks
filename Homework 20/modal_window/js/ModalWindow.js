@@ -35,20 +35,8 @@ class ModalWindow {
     this.resultContainer.innerText = "Worker's age: " + userNumber
     this.closeModal()
   }
-  closeModal() {
-    this.dialogInputEl.value = ""
-
-    this.dialogInputEl.classList.remove("error")
-    this.dialogEl.close()
-  }
-  generateDialogEl() {
-    const dialog = document.createElement("dialog")
-    dialog.className = "dialog"
-
+  generateForm() {
     const form = document.createElement("form")
-
-    const dialogTitle = document.createElement("h5")
-    dialogTitle.innerText = "This is a dialog"
 
     const input = document.createElement("input")
     input.placeholder = "Enter number"
@@ -73,11 +61,27 @@ class ModalWindow {
 
     btnContainer.append(submitBtn, closeBtn)
 
-    form.append(dialogTitle, valueLabel, input, btnContainer)
+    form.append(valueLabel, input, btnContainer)
     form.addEventListener("submit", this.submitHandler.bind(this))
     form.addEventListener("reset", this.closeModal.bind(this))
 
-    dialog.append(form)
+    return form
+  }
+  closeModal() {
+    this.dialogInputEl.value = ""
+
+    this.dialogInputEl.classList.remove("error")
+    this.dialogEl.close()
+  }
+  generateDialogEl() {
+    const dialog = document.createElement("dialog")
+    dialog.className = "dialog"
+
+    const dialogTitle = document.createElement("h5")
+    dialogTitle.innerText = "This is a dialog"
+
+    const form = this.generateForm()
+    dialog.append(dialogTitle, form)
 
     return dialog
   }

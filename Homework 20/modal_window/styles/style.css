@@ -30,14 +30,15 @@ body {
   border: none;
   border-radius: 5px;
   background-color: rgb(34, 34, 34);
+  h5 {
+    font-size: 28px;
+    margin: 0;
+  }
   & > form {
     display: flex;
     gap: 10px;
     flex-direction: column;
-    h5 {
-      font-size: 28px;
-      margin: 0;
-    }
+
     label {
       font-size: 18px;
     }
