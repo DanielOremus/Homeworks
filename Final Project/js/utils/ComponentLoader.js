@@ -11,12 +11,8 @@ class ComponentLoader {
         const bodyElements = doc.body.children
 
         for (const el of bodyElements) {
-          console.log(el)
-
           document.body.append(el.cloneNode(true))
         }
-
-        // console.log(componentContainer)
       }
     } catch (error) {
       console.log(error)
