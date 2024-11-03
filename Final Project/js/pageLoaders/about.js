@@ -6,6 +6,5 @@ window.onload = () => {
   ComponentLoader.load([
     "../components/sections/header.html",
     "../components/pages/aboutComponent.html",
-    "../components/sections/footer.html",
   ])
 }
