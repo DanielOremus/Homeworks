@@ -7,7 +7,6 @@ window.onload = async () => {
   await ComponentLoader.load([
     "../components/sections/header.html",
     "../components/pages/searchComponent.html",
-    "../components/sections/footer.html",
   ])
 
   const foodList = new FoodList(
